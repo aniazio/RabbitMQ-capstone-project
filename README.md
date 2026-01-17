@@ -21,6 +21,7 @@ docker exec -i -t rabbit-2 \bash
 rabbitmqctl stop_app
 rabbitmqctl join_cluster rabbit@rabbit1
 rabbitmqctl start_app
+exit
 ```
 
 Next join rabbit-3:
@@ -28,8 +29,9 @@ Next join rabbit-3:
 ```bash
 docker exec -i -t rabbit-3 \bash
 rabbitmqctl stop_app
-rabbitmqctl join_cluster rabbit@rabbit3
+rabbitmqctl join_cluster rabbit@rabbit1
 rabbitmqctl start_app
+exit
 ```
 
 You can see your claster under http://localhost:30001. Log in with credentials admin/admin. You can set credatial using env variables RABBIT_USER and RABBIT_PASS.
