@@ -34,4 +34,32 @@ rabbitmqctl start_app
 exit
 ```
 
-You can see your claster under http://localhost:30001. Log in with credentials admin/admin. You can set credatial using env variables RABBIT_USER and RABBIT_PASS.
+You can see your cluster under http://localhost:30001 (rabbit-1) or http://localhost:30003 (rabbit-2) or http://localhost:30005 (rabbit-3). Log in with credentials admin/admin. You can set credential using env variables RABBIT_USER and RABBIT_PASS.
+There you can find also information about queues and messages.
+
+## Project structure
+
+There are two submodules. One is producer-app with simple app, which sends messages to the queue and the other is consumer-app, which logs received messages.
+
+## HA Check
+
+To check if HA is working, you can stop one of the nodes and check if the messages are still being sent and received.
+
+```bash
+docker stop rabbit-1
+```
+
+You can see that messages are still being sent and received.
+After that you can start rabbit-1 again and check that it rejoins the cluster.
+
+```bash
+docker start rabbit-1
+```
+
+## Clearing container
+
+To clear container you can use the following command:
+
+```bash
+docker-compose down -v
+```
