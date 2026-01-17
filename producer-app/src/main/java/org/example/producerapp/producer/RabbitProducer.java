@@ -1,12 +1,10 @@
-package org.example.producerapp.publisher;
+package org.example.producerapp.producer;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.rabbitmqcapstoneproject.config.RabbitConfig;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -14,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Component
 @RequiredArgsConstructor
 @Slf4j
-public class RabbitPublisher {
+public class RabbitProducer {
 
     private final RabbitTemplate rabbitTemplate;
     private final AtomicInteger messageCount = new AtomicInteger(0);

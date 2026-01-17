@@ -8,6 +8,10 @@
         <version>4.0.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <modules>
+        <module>consumer-app</module>
+        <module>producer-app</module>
+    </modules>
     <groupId>org.example</groupId>
     <artifactId>rabbit-mq-capstone-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -29,6 +33,8 @@
     <properties>
         <java.version>17</java.version>
     </properties>
+    <packaging>pom</packaging>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -75,5 +81,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
