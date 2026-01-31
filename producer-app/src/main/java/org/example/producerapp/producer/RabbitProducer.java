@@ -24,7 +24,7 @@ public class RabbitProducer {
 
     private void sendMessage() {
         String message = "Message " + messageCount.getAndIncrement();
-        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.ROUTING_KEY, message);
+        rabbitTemplate.convertAndSend(RabbitConfig.EXCHANGE_NAME, RabbitConfig.BINDING_KEY, message);
         log.info("Sent message: {}", message);
     }
 }

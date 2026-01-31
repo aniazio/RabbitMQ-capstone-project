@@ -16,7 +16,7 @@ public class RabbitConfig {
 
     public final static String QUEUE_NAME = "test_queue";
     public final static String EXCHANGE_NAME = "test_exchange";
-    public final static String ROUTING_KEY = "test_routing_key";
+    public final static String BINDING_KEY = "test_routing_key";
 
     @Bean
     public Queue queue() {
@@ -34,6 +34,6 @@ public class RabbitConfig {
 
     @Bean
     public Binding binding(Queue queue, DirectExchange exchange) {
-        return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY);
+        return BindingBuilder.bind(queue).to(exchange).with(BINDING_KEY);
     }
 }
