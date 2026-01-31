@@ -9,8 +9,8 @@ services:
     restart: always
     environment:
       RABBITMQ_ERLANG_COOKIE: rabbitcluster
-      RABBITMQ_DEFAULT_USER: ${RABBIT_USER:-admin}
-      RABBITMQ_DEFAULT_PASS: ${RABBIT_PASS:-admin}
+      RABBITMQ_DEFAULT_USER: ${RABBIT_USER:-guest}
+      RABBITMQ_DEFAULT_PASS: ${RABBIT_PASS:-guest}
   rabbit-2:
     image: rabbitmq:management
     container_name: rabbit-2
@@ -23,8 +23,8 @@ services:
       - rabbit-1
     environment:
       RABBITMQ_ERLANG_COOKIE: rabbitcluster
-      RABBITMQ_DEFAULT_USER: ${RABBIT_USER:-admin}
-      RABBITMQ_DEFAULT_PASS: ${RABBIT_PASS:-admin}
+      RABBITMQ_DEFAULT_USER: ${RABBIT_USER:-guest}
+      RABBITMQ_DEFAULT_PASS: ${RABBIT_PASS:-guest}
   rabbit-3:
     image: rabbitmq:management
     container_name: rabbit-3
@@ -38,5 +38,5 @@ services:
       - rabbit-2
     environment:
       RABBITMQ_ERLANG_COOKIE: rabbitcluster
-      RABBITMQ_DEFAULT_USER: ${RABBIT_USER:-admin}
-      RABBITMQ_DEFAULT_PASS: ${RABBIT_PASS:-admin}
+      RABBITMQ_DEFAULT_USER: ${RABBIT_USER:-guest}
+      RABBITMQ_DEFAULT_PASS: ${RABBIT_PASS:-guest}

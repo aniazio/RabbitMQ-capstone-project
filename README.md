@@ -34,8 +34,15 @@ rabbitmqctl start_app
 exit
 ```
 
-You can see your cluster under http://localhost:30001 (rabbit-1) or http://localhost:30003 (rabbit-2) or http://localhost:30005 (rabbit-3). Log in with credentials admin/admin. You can set credential using env variables RABBIT_USER and RABBIT_PASS.
+You can see your cluster under http://localhost:30001 (rabbit-1) or http://localhost:30003 (rabbit-2) or http://localhost:30005 (rabbit-3). Log in with credentials guest/guest. You can set credential using env variables RABBIT_USER and RABBIT_PASS.
 There you can find also information about queues and messages.
+
+Optionally you can set cluster name:
+```bash
+docker exec -it rabbit-1 rabbitmqctl set_cluster_name my_cluster
+docker exec -it rabbit-2 rabbitmqctl set_cluster_name my_cluster
+docker exec -it rabbit-3 rabbitmqctl set_cluster_name my_cluster
+```
 
 ## Project structure
 
