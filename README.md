@@ -40,8 +40,6 @@ There you can find also information about queues and messages.
 Optionally you can set cluster name:
 ```bash
 docker exec -it rabbit-1 rabbitmqctl set_cluster_name my_cluster
-docker exec -it rabbit-2 rabbitmqctl set_cluster_name my_cluster
-docker exec -it rabbit-3 rabbitmqctl set_cluster_name my_cluster
 ```
 
 ## Project structure
